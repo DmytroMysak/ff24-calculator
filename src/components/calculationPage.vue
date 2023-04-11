@@ -2,7 +2,7 @@
 import { CalculationService } from '@services/calculation.service';
 import type { CalculateResponse } from '@types';
 import { QTableProps, useQuasar } from 'quasar';
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 const $q = useQuasar();
@@ -75,13 +75,6 @@ async function onSubmit(evt: any) {
     isLoading.value = false;
   }
 }
-
-onMounted(() => {
-  if (process.env.REDIRECT_URL) {
-    // eslint-disable-next-line no-console
-    fetch(process.env.REDIRECT_URL).finally(() => console.log('ping server'));
-  }
-});
 </script>
 
 <template>

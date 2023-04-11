@@ -30,7 +30,8 @@ export async function getExchangeRate(startDate: string, endDate: string): Promi
       start: formatDate(startDate, 'YYYYMMDD'),
       end: formatDate(endDate, 'YYYYMMDD'),
     });
-    const response = await fetch(`${process.env.REDIRECT_URL}${EXCHANGE_URL}${queryParams}`);
+    const url = encodeURIComponent(`${EXCHANGE_URL}${queryParams}`);
+    const response = await fetch(`${process.env.REDIRECT_URL}?url=${url}`);
 
     const data: NBUResponse[] = await response.json();
 
