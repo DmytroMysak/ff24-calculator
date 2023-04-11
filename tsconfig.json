@@ -1,0 +1,13 @@
+{
+  "extends": "@quasar/app-vite/tsconfig-preset",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "strict": true,
+    "paths": {
+      "@services/*": ["./src/services/*"],
+      "@utils": ["./src/utils/index.ts"],
+      "@constants": ["./src/constants/index.ts"],
+      "@types": ["./src/types/index.ts"]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "ff24-saving",
+  "version": "1.0.0",
+  "description": "Calculate tax from saving account of ff24",
+  "productName": "ff24 calculator",
+  "author": "Dmytro Mysak <dmytro.mysak@cyberproof.com>",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.ts,.vue ./",
+    "test": "echo \"No test specified\" && exit 0",
+    "start": "quasar dev",
+    "build": "quasar build",
+    "cz": "cz",
+    "update": "ncu -u",
+    "semantic-release": "semantic-release",
+    "predeploy": "npm run build",
+    "deploy": "vercel"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.2",
+    "@vueuse/core": "^9.13.0",
+    "quasar": "^2.11.10",
+    "vue": "^3.2.47",
+    "vue-i18n": "^9.2.2",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@intlify/vite-plugin-vue-i18n": "^6.0.3",
+    "@netly/eslint-config-base": "^1.0.3",
+    "@netly/prettier-config": "^1.1.0",
+    "@netly/semantic-release-config": "^1.0.2",
+    "@quasar/app-vite": "^1.2.1",
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "autoprefixer": "^10.4.14",
+    "eslint-plugin-vue": "^9.10.0",
+    "husky": "^8.0.3",
+    "npm-check-updates": "^16.10.7",
+    "typescript": "^5.0.4"
+  },
+  "engines": {
+    "node": "^18 || ^16",
+    "npm": ">= 8.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint --if-present",
+      "pre-push": "npm run test --if-present"
+    }
+  },
+  "prettier": "@netly/prettier-config",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
