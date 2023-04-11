@@ -169,7 +169,12 @@ async function onSubmit(evt: any) {
           <q-separator />
 
           <q-card-section class="row">
-            <q-table :title="$t('calculation.table.name')" :rows="data?.table" :columns="columns" row-key="date" />
+            <q-table
+              :grid="$q.screen.lt.sm"
+              :title="$t('calculation.table.name')"
+              :rows="data?.table"
+              :columns="columns"
+              row-key="date" />
           </q-card-section>
         </div>
       </q-slide-transition>
