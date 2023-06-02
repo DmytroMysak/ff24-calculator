@@ -9,7 +9,8 @@ export default {
     subtitle3: `We believe that everyone should have access to tools that simplify complex processes such
       as tax calculation, and we hope that our website makes a positive impact on your life.`,
     subtitle4: `If you have any questions or feedback, please don't hesitate to contact us.
-      We would love to hear from you! (postglory12345@gmail.com)`,
+      We would love to hear from you!`,
+    sendEmail: 'Send Email',
   },
   calculation: {
     header: 'Calculation of tax',

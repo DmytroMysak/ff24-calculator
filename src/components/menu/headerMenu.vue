@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useDark, useToggle } from '@vueuse/core';
 import { useQuasar } from 'quasar';
@@ -19,13 +19,14 @@ const state = {
 // const { toggleMenu } = MenuService();
 const router = useRouter();
 const $q = useQuasar();
+const nextTheme = ref(state.dark);
 
 const isDark = useDark({
   onChanged(dark: boolean) {
     $q.dark.set(dark);
+    nextTheme.value = dark ? state.light : state.dark;
   },
 });
-const nextTheme = computed(() => (isDark ? state.light : state.dark));
 const toggleDark = useToggle(isDark);
 
 function goTo(name: string) {
