@@ -1,5 +1,5 @@
+/* eslint-disable no-console */
 import type { Metric } from 'web-vitals';
-import { getCLS, getFID, getFCP, getLCP, getTTFB } from 'web-vitals';
 
 const VITALS_URL = 'https://vitals.vercel-analytics.com/v1/vitals';
 
@@ -29,14 +29,14 @@ function sendToVercelAnalytics(metric: Metric): void {
 }
 
 export const reportWebVitals = (): void => {
-  try {
-    getCLS(sendToVercelAnalytics);
-    getFID(sendToVercelAnalytics);
-    getFCP(sendToVercelAnalytics);
-    getLCP(sendToVercelAnalytics);
-    getTTFB(sendToVercelAnalytics);
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    console.error('[Analytics]', e);
-  }
+  import('web-vitals')
+    .then(({ onCLS, onFID, onFCP, onLCP, onTTFB }) => {
+      console.info('[Analytics loaded]');
+      onCLS(sendToVercelAnalytics);
+      onFID(sendToVercelAnalytics);
+      onFCP(sendToVercelAnalytics);
+      onLCP(sendToVercelAnalytics);
+      onTTFB(sendToVercelAnalytics);
+    })
+    .catch((err) => console.error('[Analytics]', err));
 };

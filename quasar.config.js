@@ -5,6 +5,10 @@ const { configure } = require('quasar/wrappers');
 const path = require('path');
 
 module.exports = configure((/* ctx */) => ({
+  vendor: {
+    remove: ['web-vitals'],
+  },
+
   eslint: {
     fix: true,
     warnings: true,
