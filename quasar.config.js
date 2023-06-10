@@ -33,7 +33,8 @@ module.exports = configure((/* ctx */) => ({
     rebuildCache: true,
     publicPath: '/',
     env: {
-      REDIRECT_URL: process.env.REDIRECT_URL
+      REDIRECT_URL: process.env.REDIRECT_URL,
+      VERCEL_ANALYTICS_ID: process.env.VERCEL_ANALYTICS_ID,
     },
     // analyze: true,
     // rawDefine: {}
