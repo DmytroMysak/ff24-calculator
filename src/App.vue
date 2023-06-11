@@ -4,12 +4,8 @@ import { onMounted } from 'vue';
 import HeaderMenu from './components/menu/headerMenu.vue';
 // import LeftMenu from './components/menu/leftMenu.vue';
 // import Breadcrumbs from './components/breadcrumbBar.vue';
-import { reportWebVitals } from './utils/vitals';
 
-onMounted(() => {
-  reportWebVitals();
-  inject();
-});
+onMounted(() => inject());
 </script>
 
 <template>
