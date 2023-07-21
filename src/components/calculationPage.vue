@@ -4,6 +4,7 @@ import type { CalculateResponse } from '@types';
 import { QTableProps, useQuasar } from 'quasar';
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { mdiClose, mdiChevronUp, mdiChevronDoubleDown } from '@quasar/extras/mdi-v5'
 
 const $q = useQuasar();
 const { t } = useI18n({ useScope: 'global' });
@@ -99,7 +100,7 @@ async function onSubmit(evt: any) {
             no-error-icon
             lazy-rules
             name="file"
-            clear-icon="mdi-close"
+            :clear-icon="mdiClose"
             v-model="file"
             :rules="[required]"
             :label="$t('calculation.fileLabel')" />
@@ -160,7 +161,7 @@ async function onSubmit(evt: any) {
           round
           flat
           dense
-          :icon="expanded ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+          :icon="expanded ? mdiChevronUp : mdiChevronDoubleDown"
           @click="expanded = !expanded" />
       </q-card-actions>
 

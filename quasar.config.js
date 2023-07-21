@@ -25,9 +25,11 @@ module.exports = configure((/* ctx */) => ({
   css: ['app.scss'],
 
   // https://github.com/quasarframework/quasar/tree/dev/extras
-  extras: ['mdi-v5', 'roboto-font'],
+  extras: ['roboto-font'],
 
   build: {
+    gzip: true,
+    analyze: false,
     target: {
       browser: ['es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1'],
       node: 'node16',
@@ -79,7 +81,7 @@ module.exports = configure((/* ctx */) => ({
   devServer: { open: false },
   framework: {
     config: {},
-    iconSet: 'mdi-v5',
+    // iconSet: 'mdi-v5',
     plugins: ['Dialog'],
   },
   animations: [],

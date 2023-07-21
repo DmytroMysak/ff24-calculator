@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import { BreadcrumbService } from '@services/breadcrumb.service';
+import { mdiChevronRight } from '@quasar/extras/mdi-v5';
 
 const { items, onMountedBreadcrumbs } = BreadcrumbService();
 
@@ -19,7 +20,7 @@ onMounted(onMountedBreadcrumbs);
         :disable="item.disabled" />
 
       <template #separator>
-        <q-icon size="1.5em" name="mdi-chevron-right" />
+        <q-icon size="1.5em" :name="mdiChevronRight" />
       </template>
     </q-breadcrumbs>
   </div>

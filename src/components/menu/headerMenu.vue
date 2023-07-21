@@ -3,20 +3,19 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useDark, useToggle } from '@vueuse/core';
 import { useQuasar } from 'quasar';
-// import { MenuService } from '@services/menu.service';
+import { mdiCalculator, mdiWeatherNight, mdiWeatherSunny, mdiInformationVariant } from '@quasar/extras/mdi-v5';
 import HeaderMenuLocale from './headerMenuLocale.vue';
 
 const state = {
   dark: {
-    icon: 'mdi-weather-night',
+    icon: mdiWeatherNight,
     theme: 'dark',
   },
   light: {
-    icon: 'mdi-weather-sunny',
+    icon: mdiWeatherSunny,
     theme: 'light',
   },
 };
-// const { toggleMenu } = MenuService();
 const router = useRouter();
 const $q = useQuasar();
 const nextTheme = ref(state.dark);
@@ -37,19 +36,17 @@ function goTo(name: string) {
 <template>
   <q-header elevated>
     <q-toolbar>
-      <!-- <q-btn v-if="isLoggedIn" flat dense round icon="mdi-menu" aria-label="Menu" @click="toggleMenu" /> -->
-
       <q-toolbar-title class="gt-sm cursor-pointer" @click="goTo('Home')">
         {{ $t('appName') }}
       </q-toolbar-title>
 
-      <q-btn fab-mini flat icon="mdi-calculator" @click="goTo('Home')">
+      <q-btn fab-mini flat :icon="mdiCalculator" @click="goTo('Home')">
         <span> {{ $t('headerMenu.calculation') }} </span>
       </q-btn>
 
       <q-space />
 
-      <q-btn fab-mini flat icon="mdi-information-variant" @click="goTo('About')">
+      <q-btn fab-mini flat :icon="mdiInformationVariant" @click="goTo('About')">
         <span class="gt-sm q-pl-xs"> {{ $t('aboutUs') }} </span>
       </q-btn>
 
@@ -58,14 +55,6 @@ function goTo(name: string) {
       </q-btn>
 
       <HeaderMenuLocale />
-
-      <!-- <q-btn v-if="!isLoggedIn" fab-mini flat icon="mdi-login-variant" @click="goTo('Login')">
-        <span class="gt-sm q-pl-xs"> {{ $t('login') }} </span>
-      </q-btn>
-
-      <q-btn v-if="isLoggedIn" fab-mini flat icon="mdi-logout-variant" @click="logout">
-        <span class="gt-sm q-pl-xs"> {{ $t('headerMenu.logout') }} </span>
-      </q-btn> -->
     </q-toolbar>
   </q-header>
 </template>
