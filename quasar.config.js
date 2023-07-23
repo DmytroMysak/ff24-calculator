@@ -81,7 +81,7 @@ module.exports = configure((/* ctx */) => ({
   devServer: { open: false },
   framework: {
     config: {},
-    // iconSet: 'mdi-v5',
+    iconSet: 'mdi-v5',
     plugins: ['Dialog'],
   },
   animations: [],
