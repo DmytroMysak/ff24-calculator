@@ -2,7 +2,7 @@
 import { CalculationService } from '@services/calculation.service';
 import type { CalculateResponse } from '@types';
 import { QTableProps, useQuasar } from 'quasar';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { mdiClose, mdiChevronUp, mdiChevronDown } from '@quasar/extras/mdi-v5';
 
@@ -49,6 +49,17 @@ const columns: QTableProps['columns'] = [
   },
 ];
 
+onMounted(() => {
+  const cachedValue = sessionStorage.getItem('data');
+  if (cachedValue) {
+    try {
+      data.value = JSON.parse(cachedValue);
+    } catch {
+      sessionStorage.removeItem('data');
+    }
+  }
+});
+
 function required(value: File): boolean | string {
   if (!value) {
     return t('validation.required');
@@ -69,6 +80,7 @@ async function onSubmit(evt: any) {
   isLoading.value = true;
   try {
     data.value = await calculate(file.value);
+    sessionStorage.setItem('data', JSON.stringify(data.value));
   } catch (error) {
     console.error(error); // eslint-disable-line no-console
     $q.dialog({ title: t('calculation.error'), message: t((error as any).message) });
