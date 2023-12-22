@@ -24,8 +24,7 @@
     "quasar": "^2.11.10",
     "vue": "^3.2.47",
     "vue-i18n": "^9.2.2",
-    "vue-router": "^4.1.6",
-    "web-vitals": "^3.3.2"
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@intlify/vite-plugin-vue-i18n": "^6.0.3",

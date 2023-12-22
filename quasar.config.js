@@ -6,7 +6,7 @@ const path = require('path');
 
 module.exports = configure((/* ctx */) => ({
   vendor: {
-    remove: ['web-vitals'],
+    remove: [],
   },
 
   eslint: {
@@ -19,7 +19,7 @@ module.exports = configure((/* ctx */) => ({
   // preFetch: true,
 
   // https://v2.quasar.dev/quasar-cli-vite/boot-files
-  boot: ['i18n', 'quasar-lang-pack', 'vitals'],
+  boot: ['i18n', 'quasar-lang-pack'],
 
   // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
   css: ['app.scss'],
@@ -40,7 +40,6 @@ module.exports = configure((/* ctx */) => ({
     publicPath: '/',
     env: {
       REDIRECT_URL: process.env.REDIRECT_URL,
-      VERCEL_ANALYTICS_ID: process.env.VERCEL_ANALYTICS_ID,
     },
     // analyze: true,
     // rawDefine: {}
