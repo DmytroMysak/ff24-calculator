@@ -4,7 +4,7 @@ import { useStorage } from '@vueuse/core';
 import { useI18n } from 'vue-i18n';
 import { DEFAULT_LOCALE } from '@constants';
 import { useQuasar } from 'quasar';
-import { mdiMenuDown } from '@quasar/extras/mdi-v5';
+import { ionCaretDownOutline } from '@quasar/extras/ionicons-v7';
 
 const state: Record<string, { title: string; value: string }> = {
   'en-US': { title: '🇬🇧 EN', value: 'en-US' },
@@ -34,7 +34,7 @@ async function localeChange(newLocale: string) {
 </script>
 
 <template>
-  <q-btn fab-mini flat :icon-right="mdiMenuDown" :label="state[currentLocale]?.title">
+  <q-btn fab-mini flat :icon-right="ionCaretDownOutline" :label="state[currentLocale]?.title">
     <q-menu fit auto-close>
       <q-list>
         <q-item v-for="(item, index) in locales" :key="index" clickable @click="localeChange(item.value)">

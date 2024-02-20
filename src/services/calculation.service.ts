@@ -13,26 +13,39 @@ export const CalculationService = createGlobalState(() => {
     }
 
     const json = parseJSON(text);
-    const exchangeRate = await getExchangeRate(json.date_start, json.date_end);
 
-    const totalInUah = json?.trades?.detailed?.reduce((acc, el) => {
+    const localStorageKey = `${formatDate(json.date_start, 'YYYYMMDD')}-${formatDate(json.date_end, 'YYYYMMDD')}`;
+    const cache = localStorage.getItem(localStorageKey);
+
+    const exchangeRate: Record<string, number> = cache
+      ? JSON.parse(cache)
+      : await getExchangeRate(json.date_start, json.date_end);
+
+    if (!cache) {
+      localStorage.setItem(localStorageKey, JSON.stringify(exchangeRate));
+    }
+
+    const profit = json?.trades?.detailed?.filter((el) => !!el.profit);
+
+    const totalInUah = profit?.reduce((acc, el) => {
       const exchangeRateForSpecificDate = exchangeRate[formatDate(el.short_date, 'YYYY-MM-DD')];
 
-      if (!exchangeRateForSpecificDate && !el.profit) {
-        return acc;
-      }
       if (!exchangeRateForSpecificDate) {
-        console.error(el); // eslint-disable-line no-console
+        console.error(el, exchangeRate); // eslint-disable-line no-console
+        localStorage.removeItem(localStorageKey);
+
         throw new Error('validation.invalidExchangeRate');
       }
       return round(acc + round(el.profit * exchangeRateForSpecificDate));
     }, 0);
 
-    const totalInUsd = json?.trades?.detailed?.reduce((acc, el) => round(acc + el.profit), 0);
+    const totalInUsd = profit?.reduce((acc, el) => round(acc + el.profit), 0);
 
     return {
       totalInUah,
       totalInUsd,
+      dateStart: json.date_start,
+      dateEnd: json.date_end,
       gainTax: calcPercent(totalInUah, 18),
       militaryTax: calcPercent(totalInUah, 1.5),
       table: json.trades.detailed

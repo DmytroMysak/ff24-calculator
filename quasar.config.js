@@ -32,7 +32,7 @@ module.exports = configure((/* ctx */) => ({
     analyze: false,
     target: {
       browser: ['es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1'],
-      node: 'node16',
+      node: 'node18',
     },
     vueRouterMode: 'hash', // available values: 'hash', 'history'
     vueOptionsAPI: false,
@@ -62,7 +62,8 @@ module.exports = configure((/* ctx */) => ({
     },
     vitePlugins: [
       [
-        '@intlify/vite-plugin-vue-i18n',
+        // eslint-disable-next-line global-require
+        require('@intlify/unplugin-vue-i18n').default,
         {
           // if you want to use Vue I18n Legacy API, you need to set `compositionOnly: false`
           // compositionOnly: false,
@@ -80,7 +81,7 @@ module.exports = configure((/* ctx */) => ({
   devServer: { open: false },
   framework: {
     config: {},
-    iconSet: 'mdi-v5',
+    iconSet: 'svg-ionicons-v6',
     plugins: ['Dialog'],
   },
   animations: [],

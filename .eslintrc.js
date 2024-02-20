@@ -23,8 +23,12 @@ module.exports = {
     process: 'readonly',
     Capacitor: 'readonly',
     chrome: 'readonly',
+    defineModel: 'readonly',
   },
   rules: {
+    '@typescript-eslint/consistent-type-exports': 'error',
+    '@typescript-eslint/consistent-type-imports': 'error',
+    '@typescript-eslint/no-import-type-side-effects': 'error',
     'no-param-reassign': 'off',
     'no-void': 'off',
     'no-nested-ternary': 'off',

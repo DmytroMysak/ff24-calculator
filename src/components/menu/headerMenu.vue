@@ -3,16 +3,21 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useDark, useToggle } from '@vueuse/core';
 import { useQuasar } from 'quasar';
-import { mdiCalculator, mdiWeatherNight, mdiWeatherSunny, mdiInformationVariant } from '@quasar/extras/mdi-v5';
+import {
+  ionCalculatorOutline,
+  ionMoonOutline,
+  ionSunnyOutline,
+  ionInformationCircleOutline,
+} from '@quasar/extras/ionicons-v7';
 import HeaderMenuLocale from './headerMenuLocale.vue';
 
 const state = {
   dark: {
-    icon: mdiWeatherNight,
+    icon: ionMoonOutline,
     theme: 'dark',
   },
   light: {
-    icon: mdiWeatherSunny,
+    icon: ionSunnyOutline,
     theme: 'light',
   },
 };
@@ -40,13 +45,13 @@ function goTo(name: string) {
         {{ $t('appName') }}
       </q-toolbar-title>
 
-      <q-btn fab-mini flat :icon="mdiCalculator" @click="goTo('Home')">
+      <q-btn fab-mini flat :icon="ionCalculatorOutline" @click="goTo('Home')">
         <span> {{ $t('headerMenu.calculation') }} </span>
       </q-btn>
 
       <q-space />
 
-      <q-btn fab-mini flat :icon="mdiInformationVariant" @click="goTo('About')">
+      <q-btn fab-mini flat :icon="ionInformationCircleOutline" @click="goTo('About')">
         <span class="gt-sm q-pl-xs"> {{ $t('aboutUs') }} </span>
       </q-btn>
 

@@ -1,13 +1,12 @@
-import { RouterOptions } from 'vue-router';
+import type { RouterOptions, RouteLocationNormalizedLoaded } from 'vue-router';
 import type { Breadcrumb } from '@types';
 import type { ComposerTranslation } from 'vue-i18n';
-import type { RouteLocationNormalizedLoaded } from 'vue-router';
 
 const routes: RouterOptions['routes'] = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('../components/calculationPage.vue'),
+    component: () => import('../components/calculation/calculationPage.vue'),
     meta: { breadcrumb: () => [] },
   },
 
