@@ -8,6 +8,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.ts,.vue ./",
     "start": "quasar dev",
+    "prebuild": "tsc --noEmit --skipLibCheck",
     "build": "quasar build",
     "cz": "cz",
     "update": "ncu -u",
