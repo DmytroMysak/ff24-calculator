@@ -29,6 +29,7 @@ export default {
       exchangeRate: 'Exchange rate',
       profitInUsd: 'Profit in USD',
       profitInUah: 'Profit in UAH',
+      moreInfo: 'More info',
     },
     instruction: {
       mobileTab: 'Instruction for mobile',

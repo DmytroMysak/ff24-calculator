@@ -50,9 +50,9 @@ const columns: QTableProps['columns'] = [
 
 <template>
   <q-card-actions v-if="model">
-    <q-space />
-
-    <q-btn round flat dense :icon="expanded ? ionCaretUpOutline : ionCaretDownOutline" @click="expanded = !expanded" />
+    <q-btn flat :icon="expanded ? ionCaretUpOutline : ionCaretDownOutline" @click="expanded = !expanded">
+      {{ $t('calculation.table.moreInfo') }}
+    </q-btn>
   </q-card-actions>
 
   <q-slide-transition v-if="model">

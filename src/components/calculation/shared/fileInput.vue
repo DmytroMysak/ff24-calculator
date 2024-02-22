@@ -34,6 +34,7 @@ function required(value: File): boolean | string {
         clearable
         no-error-icon
         name="file"
+        accept="json"
         :clear-icon="ionCloseOutline"
         v-model="file"
         :rules="[required]"

@@ -5,6 +5,7 @@ import { useQuasar } from 'quasar';
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useSessionStorage } from '@vueuse/core';
+import { ionRemoveOutline } from '@quasar/extras/ionicons-v7';
 import CalculationTable from './shared/calculationTable.vue';
 import FileInput from './shared/fileInput.vue';
 import CalculationInstruction from './shared/calculationInstruction.vue';
@@ -52,7 +53,9 @@ async function onSubmit(file: File) {
           </div>
 
           <div class="col col-4 col-xs-4 col-sm-8 col-md-9 col-lg-3 col-xl-3">
-            {{ data.dateStart }} --- {{ data.dateEnd }}
+            {{ data.dateStart }}
+            <q-icon :name="ionRemoveOutline" />
+            {{ data.dateEnd }}
           </div>
         </q-card-section>
 

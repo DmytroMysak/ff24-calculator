@@ -29,6 +29,7 @@ export default {
       exchangeRate: 'Курс обміну',
       profitInUsd: 'Дохід в USD',
       profitInUah: 'Дохід в UAH',
+      moreInfo: 'Детальніше',
     },
     instruction: {
       mobileTab: 'Інструкція для телефону',
