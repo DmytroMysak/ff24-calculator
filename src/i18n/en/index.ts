@@ -40,7 +40,7 @@ export default {
         step2: 'Login to your account',
         step3: 'Select "Savings account": Go to menu, account selection and select "Savings account"',
         step4: 'Go to menu and select "Brokerage reports"',
-        step5: 'Select period for one year (e.g. 01/01/2023 - 31/12/2023)',
+        step5: 'Select period for one year (e.g. 31/12/2022 - 31/12/2023)',
         step6: 'Click on save report by email',
         step7: 'Change format to JSON from PDF',
         step8: 'Send report to email',
