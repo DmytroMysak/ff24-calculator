@@ -25,10 +25,13 @@ export const CalculationService = createGlobalState(() => {
       localStorage.setItem(localStorageKey, JSON.stringify(exchangeRate));
     }
 
-    const profit = json?.trades?.detailed?.filter((el) => !!el.profit);
+    const declarationYear = formatDate(json.date_end, 'YYYY');
+    const profit = json?.trades?.detailed?.filter(
+      (el) => !!el.profit && formatDate(el.pay_d, 'YYYY') === declarationYear,
+    );
 
     const totalInUah = profit?.reduce((acc, el) => {
-      const exchangeRateForSpecificDate = exchangeRate[formatDate(el.short_date, 'YYYY-MM-DD')];
+      const exchangeRateForSpecificDate = exchangeRate[formatDate(el.pay_d, 'YYYY-MM-DD')];
 
       if (!exchangeRateForSpecificDate) {
         console.error(el, exchangeRate); // eslint-disable-line no-console
@@ -51,10 +54,10 @@ export const CalculationService = createGlobalState(() => {
       table: json.trades.detailed
         .filter((el) => !!el.profit)
         .map((el) => ({
-          date: el.short_date,
-          exchangeRate: exchangeRate[formatDate(el.short_date, 'YYYY-MM-DD')],
+          date: el.pay_d,
+          exchangeRate: exchangeRate[formatDate(el.pay_d, 'YYYY-MM-DD')],
           profitInUsd: round(el.profit),
-          profitInUah: round(el.profit * exchangeRate[formatDate(el.short_date, 'YYYY-MM-DD')]),
+          profitInUah: round(el.profit * exchangeRate[formatDate(el.pay_d, 'YYYY-MM-DD')]),
         })),
     };
   }
