@@ -6,11 +6,13 @@ import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useSessionStorage } from '@vueuse/core';
 import { read } from 'xlsx';
-import { ionRemoveOutline } from '@quasar/extras/ionicons-v7';
+import { ionRemoveOutline, ionHelpCircleOutline } from '@quasar/extras/ionicons-v7';
+import { useRouter } from 'vue-router';
 import CalculationTable from './shared/calculationTable.vue';
 import FileInput from './shared/fileInput.vue';
 
 const $q = useQuasar();
+const router = useRouter();
 const { t } = useI18n({ useScope: 'global' });
 const { calculate } = CalculationService();
 
@@ -49,6 +51,12 @@ async function onSubmit(file: File) {
     <q-card>
       <q-card-section>
         <div class="text-h4 q-pa-sm">{{ $t('calculation.header') }}</div>
+
+        <q-btn
+          :label="$t('headerMenu.instruction')"
+          :icon="ionHelpCircleOutline"
+          class="q-mt-md"
+          @click="router.push({ name: 'Instruction' })" />
       </q-card-section>
 
       <FileInput :is-loading="isLoading" @on-submit="onSubmit" />

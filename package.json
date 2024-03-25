@@ -2,7 +2,7 @@
   "name": "ff24-saving",
   "version": "1.0.0",
   "description": "Calculate tax from saving account of ff24",
-  "productName": "ff24 calculator",
+  "productName": "FF24++",
   "author": "Dmytro Mysak <dmytro.mysak@cyberproof.com>",
   "private": true,
   "scripts": {

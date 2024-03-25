@@ -33,7 +33,7 @@ export default {
   },
   instruction: {
     header: 'How to get broker report from PC',
-    subHeader: 'Not possible to get broker report from mobile at the moment',
+    subHeader: 'Not possible to get broker report from mobile at the moment 😔',
     step1: 'Open site freedom finance 24: https://freedom24.com',
     step2: 'Login to your account',
     step3: 'Select "Savings account"',
