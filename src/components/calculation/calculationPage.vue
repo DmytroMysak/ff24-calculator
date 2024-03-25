@@ -5,6 +5,7 @@ import { useQuasar } from 'quasar';
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useSessionStorage } from '@vueuse/core';
+import { read } from 'xlsx';
 import { ionRemoveOutline } from '@quasar/extras/ionicons-v7';
 import CalculationTable from './shared/calculationTable.vue';
 import FileInput from './shared/fileInput.vue';
@@ -24,14 +25,23 @@ async function onSubmit(file: File) {
     return;
   }
   isLoading.value = true;
-  try {
-    data.value = await calculate(file);
-  } catch (error) {
-    console.error(error); // eslint-disable-line no-console
-    $q.dialog({ title: t('calculation.error'), message: t((error as any).message) });
-  } finally {
-    isLoading.value = false;
-  }
+
+  const reader = new FileReader();
+  reader.onerror = (err) => console.error(err); // eslint-disable-line no-console
+  reader.onload = async (event: ProgressEvent<FileReader>) => {
+    if (!event.target?.result) {
+      throw new Error('validation.fileEmpty');
+    }
+    try {
+      data.value = await calculate(read(event.target?.result, { type: 'binary' }));
+    } catch (error) {
+      console.error(error); // eslint-disable-line no-console
+      $q.dialog({ title: t('calculation.error'), message: t((error as any).message) });
+    } finally {
+      isLoading.value = false;
+    }
+  };
+  reader.readAsBinaryString(file);
 }
 </script>
 
@@ -71,11 +81,11 @@ async function onSubmit(file: File) {
 
         <q-card-section class="row">
           <div class="col col-8 col-xs-8 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-            {{ $t('calculation.total', { currency: 'USD' }) }}
+            {{ $t('calculation.total', { currency: data.currency }) }}
           </div>
 
           <div class="col col-4 col-xs-4 col-sm-2 col-md-2 col-lg-1 col-xl-1">
-            {{ data.totalInUsd }} {{ $t('calculation.usd') }}
+            {{ data.totalInCurrency }} {{ data.currency.toLowerCase() }}
           </div>
         </q-card-section>
 
@@ -99,7 +109,7 @@ async function onSubmit(file: File) {
           </div>
         </q-card-section>
 
-        <CalculationTable v-model="data.table" />
+        <CalculationTable v-model="data.table" :currency="data.currency" />
       </template>
     </q-card>
   </q-page>

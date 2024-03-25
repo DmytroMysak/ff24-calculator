@@ -53,7 +53,6 @@ module.exports = configure((/* ctx */) => ({
       viteConf.resolve.alias = {
         ...viteConf.resolve.alias,
         '@services': path.resolve(__dirname, './src/services'),
-        '@utils': path.resolve(__dirname, './src/utils/index.ts'),
         '@constants': path.resolve(__dirname, './src/constants/index.ts'),
         '@types': path.resolve(__dirname, './src/types/index.ts'),
       };

@@ -27,8 +27,7 @@ export default {
       name: 'Calculation details',
       date: 'Date',
       exchangeRate: 'Exchange rate',
-      profitInUsd: 'Profit in USD',
-      profitInUah: 'Profit in UAH',
+      profit: 'Profit in {currency}',
       moreInfo: 'More info',
     },
     instruction: {
@@ -40,7 +39,10 @@ export default {
         step2: 'Login to your account',
         step3: 'Select "Savings account": Go to menu, account selection and select "Savings account"',
         step4: 'Go to menu and select "Brokerage reports"',
-        step5: 'Select period for one year (e.g. 31/12/2022 - 31/12/2023)',
+        step5:
+          // eslint-disable-next-line max-len
+          "Select period for one year (e.g. 31/12/2022 - 31/12/2023), it's better to select start date as last day of previous year as in example",
+
         step6: 'Click on save report by email',
         step7: 'Change format to JSON from PDF',
         step8: 'Send report to email',
@@ -53,7 +55,9 @@ export default {
         step3: 'Select "Savings account"',
         step4: 'Select "Member Area" at the top',
         step5: 'Select "Brokerage reports"',
-        step6: 'Select period for one year (e.g. 01/01/2023 - 31/12/2023) and select JSON format',
+        step6:
+          // eslint-disable-next-line max-len
+          "Select period for one year (e.g. 31/12/2022 - 31/12/2023), it's better to select start date as last day of previous year as in example and select JSON format",
         step7: 'Click on the right button settings',
         step8: 'Change format to JSON from PDF',
         step9: 'Send report to email',

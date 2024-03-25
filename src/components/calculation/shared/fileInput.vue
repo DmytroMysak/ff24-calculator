@@ -16,7 +16,7 @@ function required(value: File): boolean | string {
   if (!value) {
     return t('validation.required');
   }
-  if (value?.type !== 'application/json') {
+  if (!value?.type.includes('spreadsheetml')) {
     return t('validation.invalidFormat');
   }
   if (value?.size <= 0) {
@@ -34,7 +34,7 @@ function required(value: File): boolean | string {
         clearable
         no-error-icon
         name="file"
-        accept="json"
+        accept="xlsx"
         :clear-icon="ionCloseOutline"
         v-model="file"
         :rules="[required]"

@@ -7,6 +7,7 @@ import { useI18n } from 'vue-i18n';
 import { ionCaretDownOutline, ionCaretUpOutline } from '@quasar/extras/ionicons-v7';
 
 const model = defineModel<CalculateResponse['table']>({ required: false });
+const props = defineProps<{ currency: string }>();
 
 const $q = useQuasar();
 const { t } = useI18n({ useScope: 'global' });
@@ -32,7 +33,7 @@ const columns: QTableProps['columns'] = [
   {
     name: 'profitInUsd',
     required: true,
-    label: t('calculation.table.profitInUsd'),
+    label: t('calculation.table.profit', { currency: props.currency }),
     align: 'left',
     sortable: true,
     field: 'profitInUsd',
@@ -40,7 +41,7 @@ const columns: QTableProps['columns'] = [
   {
     name: 'profitInUah',
     required: true,
-    label: t('calculation.table.profitInUah'),
+    label: t('calculation.table.profit', { currency: 'UAH' }),
     align: 'left',
     sortable: true,
     field: 'profitInUah',
