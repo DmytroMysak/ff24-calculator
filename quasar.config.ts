@@ -9,7 +9,7 @@ export default configure(
     css: ['app.scss'],
     extras: ['roboto-font'],
     build: {
-      analyze: true,
+      analyze: false,
       vueRouterMode: 'hash', // available values: 'hash', 'history'
       vueOptionsAPI: false,
       publicPath: '/',
