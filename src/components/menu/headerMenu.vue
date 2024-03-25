@@ -8,6 +8,7 @@ import {
   ionMoonOutline,
   ionSunnyOutline,
   ionInformationCircleOutline,
+  ionHelpCircleOutline,
 } from '@quasar/extras/ionicons-v7';
 import HeaderMenuLocale from './headerMenuLocale.vue';
 
@@ -47,6 +48,10 @@ function goTo(name: string) {
 
       <q-btn fab-mini flat :icon="ionCalculatorOutline" @click="goTo('Home')">
         <span> {{ $t('headerMenu.calculation') }} </span>
+      </q-btn>
+
+      <q-btn fab-mini flat :icon="ionHelpCircleOutline" @click="goTo('Instruction')">
+        <span> {{ $t('headerMenu.instruction') }} </span>
       </q-btn>
 
       <q-space />

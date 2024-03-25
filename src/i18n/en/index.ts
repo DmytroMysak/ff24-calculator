@@ -30,43 +30,22 @@ export default {
       profit: 'Profit in {currency}',
       moreInfo: 'More info',
     },
-    instruction: {
-      mobileTab: 'Instruction for mobile',
-      desktopTab: 'Instruction for PC',
-      mobile: {
-        header: 'How to get broker report from mobile',
-        step1: 'Open Freedom24 app',
-        step2: 'Login to your account',
-        step3: 'Select "Savings account": Go to menu, account selection and select "Savings account"',
-        step4: 'Go to menu and select "Brokerage reports"',
-        step5:
-          // eslint-disable-next-line max-len
-          "Select period for one year (e.g. 31/12/2022 - 31/12/2023), it's better to select start date as last day of previous year as in example",
-
-        step6: 'Click on save report by email',
-        step7: 'Change format to JSON from PDF',
-        step8: 'Send report to email',
-        step9: 'Insert the report from the email to the input below',
-      },
-      desktop: {
-        header: 'How to get broker report from PC',
-        step1: 'Open site freedom finance 24: https://freedom24.com',
-        step2: 'Login to your account',
-        step3: 'Select "Savings account"',
-        step4: 'Select "Member Area" at the top',
-        step5: 'Select "Brokerage reports"',
-        step6:
-          // eslint-disable-next-line max-len
-          "Select period for one year (e.g. 31/12/2022 - 31/12/2023), it's better to select start date as last day of previous year as in example and select JSON format",
-        step7: 'Click on the right button settings',
-        step8: 'Change format to JSON from PDF',
-        step9: 'Send report to email',
-        step10: 'Insert the report from the email to the input below',
-      },
-    },
+  },
+  instruction: {
+    header: 'How to get broker report from PC',
+    subHeader: 'Not possible to get broker report from mobile at the moment',
+    step1: 'Open site freedom finance 24: https://freedom24.com',
+    step2: 'Login to your account',
+    step3: 'Select "Savings account"',
+    step4: 'Select "Member Area" at the top',
+    step5: 'Select "Brokerage reports"',
+    step6: 'Select "Trade report for a tax return"',
+    step7: 'Select saving account, year, currency and generate report',
+    step8: 'Download exel report. Done.',
   },
   headerMenu: {
     calculation: 'calculation',
+    instruction: 'get report',
     dark: 'dark',
     light: 'light',
   },

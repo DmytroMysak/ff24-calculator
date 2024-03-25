@@ -9,6 +9,12 @@ const routes: RouterOptions['routes'] = [
     component: () => import('../components/calculation/calculationPage.vue'),
     meta: { breadcrumb: () => [] },
   },
+  {
+    path: '/instruction',
+    name: 'Instruction',
+    component: () => import('../components/instruction/instructionPage.vue'),
+    meta: { breadcrumb: () => [] },
+  },
 
   {
     path: '/about',

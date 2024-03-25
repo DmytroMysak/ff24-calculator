@@ -9,7 +9,6 @@ import { read } from 'xlsx';
 import { ionRemoveOutline } from '@quasar/extras/ionicons-v7';
 import CalculationTable from './shared/calculationTable.vue';
 import FileInput from './shared/fileInput.vue';
-import CalculationInstruction from './shared/calculationInstruction.vue';
 
 const $q = useQuasar();
 const { t } = useI18n({ useScope: 'global' });
@@ -51,8 +50,6 @@ async function onSubmit(file: File) {
       <q-card-section>
         <div class="text-h4 q-pa-sm">{{ $t('calculation.header') }}</div>
       </q-card-section>
-
-      <CalculationInstruction />
 
       <FileInput :is-loading="isLoading" @on-submit="onSubmit" />
 
