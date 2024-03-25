@@ -3,7 +3,6 @@ import { inject } from '@vercel/analytics';
 import { SpeedInsights } from '@vercel/speed-insights/vue';
 import { onMounted } from 'vue';
 import HeaderMenu from './components/menu/headerMenu.vue';
-// import Breadcrumbs from './components/breadcrumbBar.vue';
 
 onMounted(() => inject());
 </script>
@@ -13,7 +12,6 @@ onMounted(() => inject());
     <HeaderMenu />
 
     <q-page-container>
-      <!-- <Breadcrumbs /> -->
       <router-view />
     </q-page-container>
   </q-layout>
