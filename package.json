@@ -11,7 +11,6 @@
     "start": "quasar dev",
     "prebuild": "tsc --noEmit --skipLibCheck",
     "build": "quasar build",
-    "test": "vitest",
     "cz": "cz",
     "update": "ncu -u",
     "semantic-release": "semantic-release",
