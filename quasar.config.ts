@@ -2,6 +2,7 @@ import { configure } from 'quasar/wrappers';
 import { fileURLToPath } from 'node:url';
 import type { QuasarConf } from '@quasar/app-vite/types/configuration/conf';
 import type { QuasarContext } from '@quasar/app-vite/types/configuration/context';
+import { version } from './package.json';
 
 export default configure(
   (ctx: QuasarContext): QuasarConf => ({
@@ -10,7 +11,7 @@ export default configure(
     extras: ['roboto-font'],
     build: {
       analyze: false,
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
       vueOptionsAPI: false,
       publicPath: '/',
       extendViteConf(viteConf) {
@@ -24,6 +25,9 @@ export default configure(
           '@types': fileURLToPath(new URL('./src/types/index.ts', import.meta.url)),
         };
         return viteConf;
+      },
+      env: {
+        PACKAGE_VERSION: version,
       },
       vitePlugins: [
         [

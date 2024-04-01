@@ -1,8 +1,8 @@
 <template>
-  <q-page class="q-pa-md">
+  <q-page class="q-pa-md q-col-gutter-x-md q-col-gutter-y-md">
     <q-card>
       <q-card-section>
-        <div class="text-h4 text-capitalize">{{ $t('aboutUs') }}</div>
+        <div class="text-h4 text-capitalize">{{ $t('menu.aboutUs') }}</div>
 
         <q-separator class="q-mt-md q-mb-md" />
 

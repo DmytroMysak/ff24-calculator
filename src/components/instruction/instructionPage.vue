@@ -3,7 +3,7 @@ const stepCount = 8;
 </script>
 
 <template>
-  <q-page class="q-pa-lg large-button-padding">
+  <q-page class="q-pa-md q-col-gutter-x-md q-col-gutter-y-md">
     <q-card>
       <q-card-section class="text-h4 q-pa-sm"> {{ $t('instruction.header') }} </q-card-section>
 

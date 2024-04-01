@@ -47,13 +47,13 @@ async function onSubmit(file: File) {
 </script>
 
 <template>
-  <q-page class="q-pa-lg large-button-padding">
+  <q-page class="q-pa-md q-col-gutter-x-md q-col-gutter-y-md">
     <q-card>
       <q-card-section>
         <div class="text-h4 q-pa-sm">{{ $t('calculation.header') }}</div>
 
         <q-btn
-          :label="$t('headerMenu.instruction')"
+          :label="$t('menu.instruction')"
           :icon="ionHelpCircleOutline"
           class="q-mt-md"
           @click="router.push({ name: 'Instruction' })" />
