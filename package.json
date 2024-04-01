@@ -14,7 +14,6 @@
     "cz": "cz",
     "update": "ncu -u",
     "semantic-release": "semantic-release",
-    "deploy": "vercel --token echo $VERCEL_TOKEN",
     "prepare": "husky"
   },
   "dependencies": {
