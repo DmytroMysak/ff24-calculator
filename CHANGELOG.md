@@ -5,6 +5,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/DmytroMysak/ff24-calculator/compare/v1.0.0...v1.0.1) (2024-04-01)
+
+### Bug Fixes
+
+- **deploy:** added missing token ([7dacd7c](https://github.com/DmytroMysak/ff24-calculator/commit/7dacd7c1b8d2f12ddc7e7e5b512ac44a9c3491a0))
+
+<!-- markdownlint-disable --><!-- textlint-disable -->
+
+# 📓 Changelog
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ## 1.0.0 (2024-04-01)
 
 ### Features
