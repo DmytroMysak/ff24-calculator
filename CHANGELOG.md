@@ -5,6 +5,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/DmytroMysak/ff24-calculator/compare/v1.0.1...v1.0.2) (2024-04-01)
+
+### Bug Fixes
+
+- **deploy:** fix deploy ([1c173bd](https://github.com/DmytroMysak/ff24-calculator/commit/1c173bd702a5da34cd9851229d90fb973ac5bad6))
+
+<!-- markdownlint-disable --><!-- textlint-disable -->
+
+# 📓 Changelog
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ## [1.0.1](https://github.com/DmytroMysak/ff24-calculator/compare/v1.0.0...v1.0.1) (2024-04-01)
 
 ### Bug Fixes
