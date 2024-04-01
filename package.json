@@ -14,8 +14,7 @@
     "cz": "cz",
     "update": "ncu -u",
     "semantic-release": "semantic-release",
-    "predeploy": "npm run build",
-    "deploy": "vercel",
+    "deploy": "vercel --token=${{ secrets.VERCEL_TOKEN }}",
     "prepare": "husky"
   },
   "dependencies": {
