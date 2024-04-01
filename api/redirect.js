@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-import-module-exports
 import { URL } from 'node:url';
 
 export default async function handler(request, response) {

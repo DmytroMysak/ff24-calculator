@@ -1,13 +1,13 @@
-import { createGlobalState } from '@vueuse/core';
+import { createSharedComposable } from '@vueuse/core';
 import { date } from 'quasar';
 import type { WorkBook } from 'xlsx';
 import { utils } from 'xlsx';
 import type { CalculateResponse, NBUResponse, RowItem } from '@types';
-import { EXCHANGE_URL } from '@constants';
+import { EXCHANGE_URL, REDIRECT_URL } from '@constants/api.constants';
 
 const { formatDate, extractDate, getMinDate, getMaxDate } = date;
 
-export const CalculationService = createGlobalState(() => {
+export const CalculationService = createSharedComposable(() => {
   const round = (number: number): number => Number(number.toFixed(2));
   const calcPercent = (total: number, percent: number): number => round((total * percent) / 100);
   const getCurrency = (parsedSheets: RowItem[]): string => parsedSheets?.[0]?.currency?.toLowerCase();
@@ -39,7 +39,7 @@ export const CalculationService = createGlobalState(() => {
         end: formatDate(endDate, 'YYYYMMDD'),
       });
       const url = encodeURIComponent(`${EXCHANGE_URL}${queryParams}`);
-      const response = await fetch(`${process.env.REDIRECT_URL}?url=${url}`);
+      const response = await fetch(`${REDIRECT_URL}?url=${url}`);
 
       const data: NBUResponse[] = await response.json();
 

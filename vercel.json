@@ -1,8 +1,7 @@
 {
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
   "functions": {
-    "api/handler.js": {
-      "maxDuration": 10
-    }
+    "api/redirect.js": { "maxDuration": 10 },
+    "api/suggestion.js": { "maxDuration": 10 }
   }
 }

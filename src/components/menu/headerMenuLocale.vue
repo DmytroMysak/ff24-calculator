@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useStorage } from '@vueuse/core';
 import { useI18n } from 'vue-i18n';
-import { DEFAULT_LOCALE } from '@constants';
+import { DEFAULT_LOCALE } from '@constants/global.constants';
 import { useQuasar } from 'quasar';
 import { ionCaretDownOutline } from '@quasar/extras/ionicons-v7';
 

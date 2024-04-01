@@ -7,11 +7,10 @@ import {
   ionBugOutline,
 } from '@quasar/extras/ionicons-v7';
 import { MenuService } from '@services/menu.service';
+import { APP_VERSION } from '@constants/global.constants';
 import LeftMeuItem from './leftMenuItem.vue';
 
 const { isShowLeftMenu } = MenuService();
-
-const version = process.env.PACKAGE_VERSION;
 </script>
 
 <template>
@@ -33,7 +32,7 @@ const version = process.env.PACKAGE_VERSION;
     <LeftMeuItem title="menu.aboutUs" :icon="ionInformationCircleOutline" route-name="About" />
 
     <div class="text-capitalize text-center q-pa-sm text-weight-light text-caption">
-      {{ `${$t('version')}: ${version}` }}
+      {{ `${$t('version')}: ${APP_VERSION}` }}
     </div>
   </q-drawer>
 </template>

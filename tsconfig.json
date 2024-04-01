@@ -5,7 +5,7 @@
     "strict": true,
     "paths": {
       "@services/*": ["./src/services/*"],
-      "@constants": ["./src/constants/index.ts"],
+      "@constants/*": ["./src/constants/*"],
       "@types": ["./src/types/index.ts"]
     }
   },

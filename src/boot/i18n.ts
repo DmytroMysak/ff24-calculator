@@ -1,7 +1,7 @@
 import { boot } from 'quasar/wrappers';
 import { createI18n } from 'vue-i18n';
 import messages from 'src/i18n';
-import { DEFAULT_LOCALE } from '@constants';
+import { DEFAULT_LOCALE } from '@constants/global.constants';
 
 export type MessageLanguages = keyof typeof messages;
 export type MessageSchema = (typeof messages)['en-US'];

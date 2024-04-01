@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE } from '@constants';
+import { DEFAULT_LOCALE } from '@constants/global.constants';
 import { Quasar } from 'quasar';
 
 const langList = import.meta.glob('../../node_modules/quasar/lang/(en-US|uk).mjs');

@@ -21,7 +21,7 @@ export default configure(
         viteConf.resolve.alias = {
           ...viteConf.resolve.alias,
           '@services': fileURLToPath(new URL('./src/services', import.meta.url)),
-          '@constants': fileURLToPath(new URL('./src/constants/index.ts', import.meta.url)),
+          '@constants': fileURLToPath(new URL('./src/constants', import.meta.url)),
           '@types': fileURLToPath(new URL('./src/types/index.ts', import.meta.url)),
         };
         return viteConf;
@@ -54,7 +54,7 @@ export default configure(
     framework: {
       config: {},
       iconSet: 'svg-ionicons-v6',
-      plugins: ['Dialog'],
+      plugins: ['Dialog', 'Notify'],
       autoImportScriptExtensions: ['ts'],
     },
     animations: [],

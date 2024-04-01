@@ -13,6 +13,16 @@ export default {
       We would love to hear from you!`,
     sendEmail: 'Send Email',
   },
+  suggestion: {
+    title: 'Offers and wishes',
+    description: 'If you have any questions or requests, please use the following form to send us a question.',
+    email: 'Email',
+    text: 'Your question or suggestion',
+    submit: 'Submit',
+    submitted: 'Submitted',
+    error: 'Unknow error, please try again later',
+    errorHeader: 'Error',
+  },
   faq: {
     title: 'Q&A',
 
@@ -107,7 +117,13 @@ export default {
     light: 'light',
   },
   validation: {
-    required: 'File required',
+    required: 'Required',
+    minLength: 'Minimum {minLength} characters',
+    minValue: 'Minimum value {minValue}',
+    maxLength: 'Maximum {maxLength} characters',
+    integer: 'Input should be an integer',
+    numeric: 'Input should be an numeric',
+    email: 'Input should be an email',
     invalidFormat: 'Invalid file format',
     fileEmpty: 'File is empty',
     fileContain: 'File contain non json data',
