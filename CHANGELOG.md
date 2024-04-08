@@ -5,6 +5,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/DmytroMysak/ff24-calculator/compare/v1.1.0...v1.1.1) (2024-04-01)
+
+### Bug Fixes
+
+- **vercel:** update vercel config ([0b9825a](https://github.com/DmytroMysak/ff24-calculator/commit/0b9825ace818da9e44cb434505a54fd6e62c73a1))
+
+<!-- markdownlint-disable --><!-- textlint-disable -->
+
+# 📓 Changelog
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ## [1.1.0](https://github.com/DmytroMysak/ff24-calculator/compare/v1.0.3...v1.1.0) (2024-04-01)
 
 ### Features
