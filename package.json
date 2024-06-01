@@ -43,7 +43,7 @@
     "npm-check-updates": "^16.14.20",
     "typescript": "~5.4.5",
     "vite-plugin-checker": "^0.6.4",
-    "vue-tsc": "^2.0.16"
+    "vue-tsc": "^2.0.19"
   },
   "engines": {
     "node": ">=18 || >=20",
