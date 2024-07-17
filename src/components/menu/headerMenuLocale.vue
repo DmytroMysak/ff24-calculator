@@ -16,14 +16,14 @@ const currentLocale = useStorage('locale', DEFAULT_LOCALE, localStorage);
 const { locale } = useI18n({ useScope: 'global' });
 const locales = ref(Object.values(state));
 
-/* webpackInclude: /(uk|en-US)\.mjs$/ */
-const langList = import.meta.glob('../../../node_modules/quasar/lang/(en-US|uk).mjs');
+/* webpackInclude: /(uk|en-US)\.js$/ */
+const langList = import.meta.glob('../../../node_modules/quasar/lang/(en-US|uk).js');
 
 async function localeChange(newLocale: string) {
   locale.value = newLocale;
   currentLocale.value = newLocale;
 
-  const language = langList[`../../../node_modules/quasar/lang/${newLocale}.mjs`];
+  const language = langList[`../../../node_modules/quasar/lang/${newLocale}.js`];
   if (typeof language === 'function') {
     await language().then((lang) => $q.lang.set(lang.default));
   } else {
