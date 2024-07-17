@@ -1,7 +1,7 @@
 import { DEFAULT_LOCALE } from '@constants/global.constants';
-import { Quasar } from 'quasar';
+import { Quasar, type QuasarLanguage } from 'quasar';
 
-const langList = import.meta.glob('../../node_modules/quasar/lang/(en-US|uk).js');
+const langList = import.meta.glob<{ default: QuasarLanguage }>('../../node_modules/quasar/lang/(en-US|uk).js');
 
 export default async () => {
   const langIso = localStorage?.getItem?.('locale') ?? DEFAULT_LOCALE;

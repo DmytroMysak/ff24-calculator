@@ -3,6 +3,12 @@
   "compilerOptions": {
     "baseUrl": ".",
     "strict": true,
+    "verbatimModuleSyntax": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "lib": ["dom", "ESNext"],
+    "target": "ES2022",
+    "types": ["@intlify/unplugin-vue-i18n/messages"],
     "paths": {
       "@services/*": ["./src/services/*"],
       "@constants/*": ["./src/constants/*"],

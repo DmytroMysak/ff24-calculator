@@ -1,5 +1,5 @@
 import { useI18n } from 'vue-i18n';
-// @ts-ignore
+// @ts-expect-error some weird fucking shit
 import { required, minLength, integer, minValue, numeric, email } from '@vuelidate/validators/dist/raw.mjs';
 import { createSharedComposable } from '@vueuse/core';
 

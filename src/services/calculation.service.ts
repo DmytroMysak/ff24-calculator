@@ -15,7 +15,7 @@ export const CalculationService = createSharedComposable(() => {
   function getDateRange(parsedSheets: RowItem[]): { startDate: Date; endDate: Date } {
     const paymentDates = parsedSheets.map((el) => el.paymentDate);
 
-    // @ts-ignore
+    // @ts-expect-error some weird fucking shit
     return { startDate: getMinDate(...paymentDates), endDate: getMaxDate(...paymentDates) };
   }
 

@@ -31,22 +31,20 @@ export default configure(
       },
       vitePlugins: [
         [
-          [
-            '@intlify/unplugin-vue-i18n/vite',
-            {
-              runtimeOnly: false,
-              include: [fileURLToPath(new URL('./src/i18n', import.meta.url))],
-              ssr: ctx.modeName === 'ssr',
-            },
-          ] as any,
-          [
-            'vite-plugin-checker',
-            {
-              vueTsc: { tsconfigPath: 'tsconfig.vue-tsc.json' },
-              eslint: { lintCommand: 'eslint "./**/*.{js,ts,mjs,cjs,vue}"' },
-            },
-            { server: false },
-          ],
+          '@intlify/unplugin-vue-i18n/vite',
+          {
+            runtimeOnly: false,
+            include: [fileURLToPath(new URL('./src/i18n', import.meta.url))],
+            ssr: ctx.modeName === 'ssr',
+          },
+        ],
+        [
+          'vite-plugin-checker',
+          {
+            vueTsc: { tsconfigPath: 'tsconfig.vue-tsc.json' },
+            eslint: { useFlatConfig: true, lintCommand: 'eslint "src/**/*.{js,ts,mjs,cjs,vue}"' },
+          },
+          { server: false },
         ],
       ],
     },

@@ -43,5 +43,6 @@
     "сюди",
     "файл",
     "файлі"
-  ]
+  ],
+  "eslint.useFlatConfig": true
 }

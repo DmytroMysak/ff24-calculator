@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useStorage } from '@vueuse/core';
 import { useI18n } from 'vue-i18n';
 import { DEFAULT_LOCALE } from '@constants/global.constants';
-import { useQuasar } from 'quasar';
+import { useQuasar, type QuasarLanguage } from 'quasar';
 import { ionCaretDownOutline } from '@quasar/extras/ionicons-v7';
 
 const state: Record<string, { title: string; value: string }> = {
@@ -17,7 +17,7 @@ const { locale } = useI18n({ useScope: 'global' });
 const locales = ref(Object.values(state));
 
 /* webpackInclude: /(uk|en-US)\.js$/ */
-const langList = import.meta.glob('../../../node_modules/quasar/lang/(en-US|uk).js');
+const langList = import.meta.glob<{ default: QuasarLanguage }>('../../../node_modules/quasar/lang/(en-US|uk).js');
 
 async function localeChange(newLocale: string) {
   locale.value = newLocale;

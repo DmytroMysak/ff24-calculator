@@ -37,7 +37,7 @@ async function onSubmit(file: File) {
       data.value = await calculate(read(event.target?.result, { type: 'binary' }));
     } catch (error) {
       console.error(error); // eslint-disable-line no-console
-      $q.dialog({ title: t('calculation.error'), message: t((error as any).message) });
+      $q.dialog({ title: t('calculation.error'), message: t((error as Error).message) });
     } finally {
       isLoading.value = false;
     }

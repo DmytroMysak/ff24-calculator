@@ -38,7 +38,7 @@ async function onSubmit() {
         message: t('suggestion.submitted'),
       }),
     )
-    .catch((error) => $q.dialog({ title: t('suggestion.errorHeader'), message: t((error as any).message) }))
+    .catch((error) => $q.dialog({ title: t('suggestion.errorHeader'), message: t((error as Error).message) }))
     .finally(() => {
       isLoading.value = false;
       form.value.reset();
